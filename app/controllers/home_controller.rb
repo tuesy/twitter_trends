@@ -10,4 +10,7 @@ class HomeController < ApplicationController
       end
     end
   end
+  def http_basic?
+    false
+  end
 end
