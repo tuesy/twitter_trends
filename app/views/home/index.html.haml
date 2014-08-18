@@ -1,0 +1,16 @@
+%table.table
+  %thead
+    %tr
+      %th Trend
+      %th Count
+      %th Time
+      %th Links
+  %tbody
+    - @trends.each do |x|
+      %tr
+        %td= link_to x.name, x.url, target: '_blank'
+        %th= @counts[x.name]
+        %td
+          = time_ago_in_words(x.as_of)
+          ago
+        %td= link_to 'Topsy', "http://topsy.com/s?q=#{x.query}", target: '_blank'
